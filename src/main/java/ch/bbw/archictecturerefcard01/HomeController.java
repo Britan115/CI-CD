@@ -8,7 +8,7 @@ import java.net.InetAddress;
 @Controller
 public class HomeController {
 
-    @GetMapping("")
+    @GetMapping({"/", ""})
     public String home(Model model) {
 
         Message message = new Message();
