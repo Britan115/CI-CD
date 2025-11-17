@@ -44,7 +44,7 @@ jobs:
             ${{ secrets.DOCKERHUB_USERNAME }}/${{ env.IMAGE_NAME }}:${{ github.sha }}
 
       - name: Optional: Log in to GitHub Container Registry (GHCR)
-        if: secrets.GHCR_PAT != ''
+        if: ${{ secrets.GHCR_PAT != '' }}
         uses: docker/login-action@v2
         with:
           registry: ghcr.io
@@ -52,7 +52,7 @@ jobs:
           password: ${{ secrets.GHCR_PAT }}
 
       - name: Optional: Build and push to GHCR
-        if: secrets.GHCR_PAT != ''
+        if: ${{ secrets.GHCR_PAT != '' }}
         uses: docker/build-push-action@v4
         with:
           context: .
