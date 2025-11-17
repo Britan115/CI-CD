@@ -1,6 +1,6 @@
 name: Java Docker Build and Publish
-
-on:
+# Workflow triggered on push to main/master or manual dispatch
+# Builds Docker image and pushes to Docker Hub
   push:
     branches: [ 'main', 'master' ]
   workflow_dispatch:
